@@ -30,7 +30,8 @@ def answer():
       #print(rows[i])
       #printing the correct records line by line
       print(",".join(rows[i]))
-
+      
+# basically calling the method when python3 main.py is executed
 if __name__ == "__main__":
     answer()
   
