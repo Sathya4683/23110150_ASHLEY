@@ -8,9 +8,12 @@ def answer():
     # we get id,name, score, updated_at in cur
     cur = input("enter row val:").split(',')
     cur_name = cur[0]
+   
     if cur_name in name_set:
       cand = name_set[cur_name]
-      if cand[3] >= cur[3]:
+      print(cand)
+      
+      if int(cand[3]) >= int(cur[3]):
         continue
       else:
         name_set[cur_name] = cur
@@ -24,14 +27,15 @@ def answer():
 
   # deduplication logic!
   for i in range(len(rows)):
-    if name_set[rows[i][0]][3] == rows[i][3]:
+    if int(name_set[rows[i][0]][3]) == int(rows[i][3]):
       out = ""
       
       #print(rows[i])
       #printing the correct records line by line
       print(",".join(rows[i]))
-      
-# basically calling the method when python3 main.py is executed
+  
+
+
 if __name__ == "__main__":
     answer()
   
